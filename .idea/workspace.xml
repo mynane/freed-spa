@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90f6d170-14d2-4a62-8872-8547b5b81908" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/freed-spa.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/make-webpack.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/RouteWithSubRoutes.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/routerReducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/configureStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/style/border-1px.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/hooks/pre-commit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/keys/certificate.pem" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/keys/privatekey.pem" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/log.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/forward.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/respond.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/responders/combo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/responders/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/responders/local-file.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/middlewares/responders/web-file.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/nproxy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/proxy/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.eslintignore" afterPath="$PROJECT_DIR$/.eslintignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".eslintignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".eslintignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.eslintignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+            <state relative-caret-position="30">
+              <caret line="2" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -88,6 +65,7 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.eslintignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -186,12 +164,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495809355198</updated>
-      <workItem from="1495809356902" duration="288000" />
+      <workItem from="1495809356902" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288000" />
+    <option name="totallyTimeSpent" value="395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -252,8 +230,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.eslintignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="30">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
           <folding />
         </state>
       </provider>
