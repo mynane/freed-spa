@@ -1,4 +1,4 @@
-dist/*.js
+dist/**/*.js
 lib/**/*.js
 tool
 node_modules
