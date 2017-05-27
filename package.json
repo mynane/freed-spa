@@ -1,7 +1,7 @@
 {
-  "name": "freed-framework",
+  "name": "freed-spa",
   "version": "0.0.1",
-  "description": "大致的工作流程 1. App.jsx 2. 调用 actions/*.js 3. actions 调用 fetch(axios.js) 发送数据请求",
+  "description": "",
   "main": "App.js",
   "scripts": {
     "start": "node ./tool/server.js",

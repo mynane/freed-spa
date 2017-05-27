@@ -17,6 +17,8 @@ const maker = function (options) {
         vendor: [],
     };
 
+    let hotServer = 'http://0.0.0.0:8899' || options.hotServer;
+
     let plugins = [];
 
     const output = {};
@@ -44,7 +46,7 @@ const maker = function (options) {
     } else {
         entry.vendor = entry.vendor.concat([
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://0.0.0.0:8899',
+            `webpack-dev-server/client?${hotServer}`,
             'webpack/hot/only-dev-server',
         ]);
 
