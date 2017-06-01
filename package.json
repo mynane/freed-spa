@@ -1,11 +1,11 @@
 {
   "name": "freed-spa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "App.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/npm/npm.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/npm/npm.git"
   },
   "scripts": {
     "start": "node ./tool/server.js",
