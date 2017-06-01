@@ -112,6 +112,50 @@ const maker = function (options) {
                     test: /\.jsx?$/,
                     use: ['babel-loader'],
                     exclude: /node_modules/
+                },
+                {
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: [
+                            'css-loader',
+                            'autoprefixer-loader',
+                            'sass-loader',
+                        ],
+                    })
+                },
+                // less 加载器
+                {
+                    test: /\.less$/,
+                    loader: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            'css-loader',
+                            'autoprefixer-loader?minimize',
+                            'less-loader',
+                        ]
+                    })
+                },
+                // css 加载器
+                // Reference: https://github.com/webpack/style-loader
+                // Reference: https://github.com/webpack/css-loader
+                // Reference: https://github.com/webpack/autoprefixer-loader
+                // Reference: https://github.com/webpack/extract-text-webpack-plugin
+                {
+                    test: /\.css$/,
+                    loader: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            'css-loader',
+                            'autoprefixer-loader?minimize'
+                        ]
+                    })
+                },
+                {
+                    // JSON资源文件加载器
+                    // Reference: https://github.com/webpack/json-loader
+                    test: /\.json$/,
+                    loader: 'json-loader'
                 }
             ].concat(options.module.rules)
         },
