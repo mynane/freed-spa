@@ -131,7 +131,7 @@ const maker = function (options) {
                         fallback: 'style-loader',
                         use: [
                             'css-loader',
-                            'autoprefixer-loader?minimize',
+                            'autoprefixer-loader',
                             'less-loader',
                         ]
                     })
