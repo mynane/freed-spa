@@ -1,38 +1,51 @@
 /**
- * @file webpack.config.js
- * @author deo
+ * @file make-webpack.config.js
+ * @author denglingbo
  *
  */
-
+const glob = require('glob');
 const path = require('path');
 const process = require('process');
 const webpack = require('webpack');
+const HtmlWebPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname);
 
 const ENV = process.env.NODE_ENV;
 const __PRO__ = ENV === 'production';
 
+const configFiles = glob.sync(process.cwd() + '/config/*.js');
 /**
  * 获取一些公有配置
  * @returns {*}
  */
 function getPublicConfig() {
-    if (ENV === '') {
+    if (ENV === undefined) {
         return null;
     }
 
-    if (ENV === 'sit') {
-        return path.join(ROOT_PATH, './config/config.sit.js');
+    let f = null;
+    let type = ENV === 'pro' ? '' : '.' + ENV;
+    let fileName = 'config' + type + '.js';
+
+    configFiles.forEach(function (item) {
+        const expr = new RegExp(fileName + '$');
+        if (expr.test(item)) {
+            f = item;
+        }
+    });
+
+    if (f === null) {
+        throw new Error('Required {PRODUCT CONFIG PATH}: ' + file);
     }
 
-    return path.join(ROOT_PATH, './config/config.js');
+    return f;
 }
 
 /**
  * 构建入口
  * @param options
- * @returns {{devtool: boolean, entry: {vendor: Array}, output: *, plugins: Array.<*>, module: {rules: (Array.<*>|Iterable<K, V>)}, resolve: {alias: *, extensions: [string,string], modules: (Array.<*>|Iterable<K, V>)}}}
  */
 const maker = function (options) {
     // 默认配置
@@ -147,7 +160,7 @@ const maker = function (options) {
                         fallback: 'style-loader',
                         use: [
                             'css-loader',
-                            'autoprefixer-loader?minimize'
+                            'autoprefixer-loader'
                         ]
                     })
                 },
