@@ -6,7 +6,11 @@ import axios from 'axios';
 
 // axios 配置
 axios.defaults.timeout = 10000;
-axios.defaults.baseURL = '/api';
+// axios.defaults.baseURL = '/api';
+
+axios.defaults.headers = {
+    'Content-Type': 'application/json;charset=UTF-8'
+};
 
 // http request 拦截器
 // axios.interceptors.request.use(
@@ -44,3 +48,5 @@ const send = (url, params, type) => axios[type](url, params);
 export const get = (url, params) => send(url, params, 'get');
 
 export const post = (url, params) => send(url, params, 'post');
+
+export default axios;

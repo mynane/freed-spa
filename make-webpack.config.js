@@ -9,13 +9,43 @@ const process = require('process');
 const webpack = require('webpack');
 
 const ROOT_PATH = path.resolve(__dirname);
-const __PRO__ = process.env.NODE_ENV === 'production';
 
+const ENV = process.env.NODE_ENV;
+const __PRO__ = ENV === 'production';
+
+/**
+ * 获取一些公有配置
+ * @returns {*}
+ */
+function getPublicConfig() {
+    if (ENV === '') {
+        return null;
+    }
+
+    if (ENV === 'sit') {
+        return path.join(ROOT_PATH, './config/config.sit.js');
+    }
+
+    return path.join(ROOT_PATH, './config/config.js');
+}
+
+/**
+ * 构建入口
+ * @param options
+ * @returns {{devtool: boolean, entry: {vendor: Array}, output: *, plugins: Array.<*>, module: {rules: (Array.<*>|Iterable<K, V>)}, resolve: {alias: *, extensions: [string,string], modules: (Array.<*>|Iterable<K, V>)}}}
+ */
 const maker = function (options) {
     // 默认配置
     let entry = {
         vendor: [],
     };
+
+    Object.assign(entry, options.entry);
+
+    const publicConfig = getPublicConfig();
+    if (publicConfig !== null) {
+        entry.common = publicConfig;
+    }
 
     let hotServer = 'http://0.0.0.0:8899' || options.hotServer;
 
@@ -63,20 +93,12 @@ const maker = function (options) {
         // 对于热替换（HMR）是必须的，让webpack知道在哪里载入热更新的模块（chunk）
         output.publicPath = '/';
     }
-    
-    entry.vendor = entry.vendor.concat([
-        'react',
-        'react-dom',
-    ]);
 
     return {
         devtool: devtool,
 
         // 入口配制
-        entry: Object.assign(
-            entry,
-            options.entry
-        ),
+        entry: entry,
         // 输出配制
         output: Object.assign(output, options.output),
 
@@ -93,7 +115,7 @@ const maker = function (options) {
                 }
             ].concat(options.module.rules)
         },
-        
+
         resolve: {
             // alias 是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
             alias: Object.assign({
