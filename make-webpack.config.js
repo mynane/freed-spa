@@ -61,7 +61,6 @@ const maker = function (options) {
     }
 
     let hotServer = 'http://0.0.0.0:8899' || options.hotServer;
-
     let plugins = [];
 
     const output = {};
@@ -106,6 +105,19 @@ const maker = function (options) {
         // 对于热替换（HMR）是必须的，让webpack知道在哪里载入热更新的模块（chunk）
         output.publicPath = '/';
     }
+
+    plugins = plugins.concat([
+        // 提取所有打包后 js 入口文件中的公共部分
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: Object.keys(entry).filter(key => key !== 'vendor')
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        })
+    ]);
 
     return {
         devtool: devtool,
