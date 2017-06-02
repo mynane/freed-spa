@@ -17,7 +17,7 @@ const __PRO__ = ENV === 'production';
 
 const configFiles = glob.sync(process.cwd() + '/config/*.js');
 /**
- * 获取一些公有配置
+ * 获取公有配置
  * @returns {*}
  */
 function getPublicConfig() {
